@@ -1,7 +1,6 @@
 Compend = []
-Ium = [[],[]]
+Ium = [[],[],[]]
 Compendium = []
-Ium.append([])
 
 def clear():
     print("\n"*50)

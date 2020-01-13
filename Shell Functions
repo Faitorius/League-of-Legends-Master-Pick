@@ -1,0 +1,77 @@
+Compend = []
+Ium = [[],[]]
+Compendium = []
+Ium.append([])
+
+def clear():
+    print("\n"*50)
+    
+"""
+Creates a list that consist of four elements. The first is the name of the champion. The second is the name of the champions they are strong against. I would suggest inputting champions that are in the top six in this list and not just the top three, maybe even champions up to above the fifty percent win marker. The third is the name of the champions that are strong against the champion you created the list for. Same rules but make sure these are champions you lose against. Finally is the synergies with good win ratios. These are champions that synergize well on your team and not the enemies. This must be created before trying to start a match. To switch to the next index, you have to keep the string empty and press enter. Be sure you type everything correctly the first time or you might not be able to fix it. Another thing is to make sure you do not put any apostraphies inside champion names with apostraphies. This will likely return an error although I have never tried it. Write everything verbatim, capitalized ect.
+"""
+
+def newcomp():
+	name = input("What is the name of the champion: ")
+	strong = "A"
+	weak = "A"
+	syn = "A"
+	index = 0
+	Compend.append([name, [], [], []])
+	index = len(Compend) - 1
+	print(Compend)
+	while strong != "":
+		strong = input("What is the champion strong against: ")
+		Compend[index][1].append(strong)
+		Compend[index][1].sort()
+		print(Compend[index][1])
+	while weak != "":
+		weak = input("What is the champion weak again: ")
+		Compend[index][2].append(weak)
+		Compend[index][2].sort()
+		print(Compend[index][2])
+	while syn != "":
+		syn = input("What are the champions synergies: ")
+		Compend[index][3].append(syn)
+		Compend[index][3].sort()
+		print(Compend[index][3])
+    
+"""
+This is a function which is used during the creation of a new game. It takes in the input you put for what champions have been picked so far. When it recieves an empty string, it will consider everything done. I would like to emphasis that I created this code in not only under a day, but under an hour. In fact maybe under thirty minutes. This was not hard to make, but it does work. After you return an empty string when you have to select a champion in champion selection, it will add up the values accumulated from three separate list that get created based on what champions you actually own and it will then tell you at the bottom of the shell window, which champion would be the best to pick based on synergies, counter picks, and counter counter picks. Be sure to only return the empty string during the question about what mode you want to input the champion name in. Write everything verbatim, capitalized ect.
+"""
+    
+def newgame():
+	selection = "A"
+	tempa = "A"
+	tempb = 0
+	tempc = "A"
+	while selection != "":
+		selection = input("Who is currently picking?\n (enter ally, enemy, or leave empty for self)\n Use all lowercase letters: ")
+		if selection == "enemy":
+			tempc = input("What champion did they pick?: ")
+			for i in range(len(Compend)):
+				if tempc in Compend[i][1]:
+					lum[0].append(tempc)
+				if tempc in Compend[i][2]:
+					lum[1].append(tempc)
+		elif selection == "ally":
+			tempc = input("What champion did they pick?: ")
+			for t in range(len(Compend)):
+				if tempc in Compend[i][3]:
+					lum[2].append(tempc)
+		elif selection == "":
+			pass
+		else:
+			print("You've entered an invalid input")
+			break
+	for o in range(len(Compend)):
+		tempa = Compend[o][0]
+		tempb += lum[0].count(tempa)
+		tempb -= lum[1].count(tempa)
+		tempb += lum[2].count(tempa)
+		Compendium.append([tempb, tempa])
+	Compendium.sort()
+	print(Compendium)
+	Compendium.clear()
+	lum.clear()
+	lum.append([])
+	lum.append([])

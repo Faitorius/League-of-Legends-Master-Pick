@@ -44,7 +44,7 @@ def newgame():
 	tempb = 0
 	tempc = "A"
 	while selection != "":
-		selection = input("Who is currently picking?\n (enter ally, enemy, or leave empty for self)\n Use all lowercase letters: ")
+		selection = input("Who is currently picking?\n (enter ally, enemy, or leave empty for self)\n Use verbatim spelling: ")
 		if selection == "enemy":
 			tempc = input("What champion did they pick?: ")
 			for i in range(len(Compend)):

@@ -72,5 +72,4 @@ def newgame():
 	print(Compendium)
 	Compendium.clear()
 	lum.clear()
-	lum.append([])
-	lum.append([])
+	lum.append([])*3

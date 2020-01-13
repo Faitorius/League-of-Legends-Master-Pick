@@ -55,7 +55,7 @@ def newgame():
 		elif selection == "ally":
 			tempc = input("What champion did they pick?: ")
 			for t in range(len(Compend)):
-				if tempc in Compend[i][3]:
+				if tempc in Compend[t][3]:
 					lum[2].append(tempc)
 		elif selection == "":
 			pass

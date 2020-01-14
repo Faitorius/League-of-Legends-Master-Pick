@@ -9,6 +9,35 @@ def clear():
 Creates a list that consist of four elements. The first is the name of the champion. The second is the name of the champions they are strong against. I would suggest inputting champions that are in the top six in this list and not just the top three, maybe even champions up to above the fifty percent win marker. The third is the name of the champions that are strong against the champion you created the list for. Same rules but make sure these are champions you lose against. Finally is the synergies with good win ratios. These are champions that synergize well on your team and not the enemies. This must be created before trying to start a match. To switch to the next index, you have to keep the string empty and press enter. Be sure you type everything correctly the first time or you might not be able to fix it. Another thing is to make sure you do not put any apostraphies inside champion names with apostraphies. This will likely return an error although I have never tried it. Write everything verbatim, capitalized ect.
 """
 
+def newcomp():
+	name = input("What is the name of the champion: ")
+	strong = "A"
+	weak = "A"
+	syn = "A"
+	index = 0
+	Compend.append([name, [], [], []])
+	index = len(Compend) - 1
+	print(Compend)
+	while strong != "":
+		strong = input("What is the champion strong against: ")
+		Compend[index][1].append(strong)
+		Compend[index][1].sort()
+		print(Compend[index][1])
+	while weak != "":
+		weak = input("What is the champion weak again: ")
+		Compend[index][2].append(weak)
+		Compend[index][2].sort()
+		print(Compend[index][2])
+	while syn != "":
+		syn = input("What are the champions synergies: ")
+		Compend[index][3].append(syn)
+		Compend[index][3].sort()
+		print(Compend[index][3])
+		
+"""
+This takes each champion picked during the game and returns how many times they appear in the list for synergies, counter picks, and countered picks inside of the champions you unlocked. It assigns value to each of your unlocked champions this way and returns the value of each of those champions in sorted value order.
+"""
+
 def newgame():
 	selection = "A"
 	tempa = "A"
